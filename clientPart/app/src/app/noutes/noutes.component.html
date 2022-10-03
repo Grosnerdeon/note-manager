@@ -1,0 +1,19 @@
+<div>
+    <mat-form-field appearance="fill">
+        <mat-label>Title</mat-label>
+        <input [(ngModel)]="noute.title" matInput>
+    </mat-form-field>
+    
+    <mat-form-field appearance="fill">
+        <mat-label>Description</mat-label>
+        <input [(ngModel)]="noute.description" matInput>
+    </mat-form-field>
+    
+    <button mat-raised-button color="primary">Add</button>    
+</div>
+
+<mat-nav-list>
+    <mat-list-item *ngFor="let noute of noutes">
+       {{noute.title}}
+    </mat-list-item>
+</mat-nav-list>
