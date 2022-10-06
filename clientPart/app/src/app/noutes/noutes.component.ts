@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { INoute } from '../interfaces/noute/noute';
-import {FormControl, FormGroupDirective, NgForm, Validators} from '@angular/forms';
-import { NOUTES } from '../mouk/mouk-noutes';
+import { NoutesService } from '../noutes.service';
 
 @Component({
   selector: 'app-noutes',
@@ -17,11 +16,15 @@ export class NoutesComponent implements OnInit {
 
   noutes: INoute[] = [];
 
-  constructor() { 
-    this.noutes = NOUTES;
+  constructor(public noutesService: NoutesService) { 
+    this.getNoutes();
   }
 
   ngOnInit(): void {
   }
 
+  getNoutes(): void {
+    this.noutesService.getNoutes()
+      .subscribe(noutes => this.noutes = noutes);
+  }
 }

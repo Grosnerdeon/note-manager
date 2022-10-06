@@ -1,9 +1,15 @@
-.example-form {
-    min-width: 150px;
-    max-width: 500px;
-    width: 100%;
-  }
-  
-  .example-full-width {
-    width: 100%;
-  }
+.add-form {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr 94px;
+  grid-gap: 8px;
+  padding: 8px;
+}
+
+.list-card {
+  padding: 8px;
+}
+
+.card {
+  padding: 4px;
+}
