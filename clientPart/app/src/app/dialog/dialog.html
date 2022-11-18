@@ -1,0 +1,20 @@
+<h1 mat-dialog-title>{{data.titleDialog}}</h1>
+<div mat-dialog-content>
+    <div class="add-form">
+        <mat-form-field appearance="fill">
+            <mat-label>Title</mat-label>
+            <input [(ngModel)]="data.noute.title" matInput>
+        </mat-form-field>
+        
+        <mat-form-field appearance="fill">
+            <mat-label>Description</mat-label>
+            <textarea matInput cdkTextareaAutosize
+            cdkAutosizeMinRows="1"
+            cdkAutosizeMaxRows="5" [(ngModel)]="data.noute.description"></textarea>
+        </mat-form-field>
+    </div>
+</div>
+<div mat-dialog-actions style="justify-content: center;">
+  <button mat-raised-button (click)="onCancelClick()">Cancel</button>
+  <button mat-raised-button color="primary" (click)="onSaveClick()" cdkFocusInitial>Save</button>
+</div>

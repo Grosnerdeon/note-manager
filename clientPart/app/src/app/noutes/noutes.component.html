@@ -1,26 +1,28 @@
-<div class="add-form">
-    <mat-form-field appearance="fill">
-        <mat-label>Title</mat-label>
-        <input [(ngModel)]="noute.title" matInput>
-    </mat-form-field>
-    
-    <mat-form-field appearance="fill">
-        <mat-label>Description</mat-label>
-        <input [(ngModel)]="noute.description" matInput>
-    </mat-form-field>
-    
-    <button mat-raised-button (click)="noutesService.addNoute(noute.title, noute.description)" color="primary">Add</button>    
+<mat-toolbar role="toolbar" color="primary">
+    <mat-toolbar-row>
+      <span>Noutes Manager</span>
+      <span class="example-spacer"></span>
+      <button mat-icon-button 
+                matTooltip="Create Noute"
+                matTooltipPosition="above"
+                (click)="openDialog()">
+        <mat-icon class="example-icon">add</mat-icon>
+      </button>
+      
+    </mat-toolbar-row>
+</mat-toolbar>
+<div style="height: calc(100% - 66px); position: absolute;">
+    <div class="list-card">
+        <div class="card" *ngFor="let noute of noutes">
+            <mat-card>
+                <mat-card-title>{{noute.title}}</mat-card-title>
+                <mat-card-subtitle>{{noute.description}}</mat-card-subtitle>
+                <mat-card-actions>
+                    <button mat-raised-button (click)="openDialog(noute.title, noute.description, noute._id, true)">Edit</button>
+                    <button mat-raised-button (click)="deleteNoute(noute._id)">Delete</button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </div> 
 </div>
 
-<div class="list-card">
-    <div class="card" *ngFor="let noute of noutes">
-        <mat-card>
-            <mat-card-title>{{noute.title}}</mat-card-title>
-            <mat-card-subtitle>{{noute.description}}</mat-card-subtitle>
-            <mat-card-actions>
-                <button mat-button>Edit</button>
-                <button mat-button>Delete</button>
-            </mat-card-actions>
-        </mat-card>
-    </div>
-</div>
