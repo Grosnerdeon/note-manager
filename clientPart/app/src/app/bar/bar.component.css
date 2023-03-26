@@ -1,0 +1,7 @@
+.bar-container {
+    justify-content: space-between;
+}
+
+.bar-container-main {
+    cursor: pointer;
+}

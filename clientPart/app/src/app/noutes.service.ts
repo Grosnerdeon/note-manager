@@ -8,8 +8,11 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class NoutesService {
+  noutes: INoute[];
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) { 
+    this.noutes = [];
+  }
 
   getNoutes(): Observable<INoute[]> {
     return this.http.get<INoute[]>('/api/noutes/all');

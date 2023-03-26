@@ -1,0 +1,7 @@
+.add-form {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    grid-gap: 8px;
+    padding: 8px;
+  }
