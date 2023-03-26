@@ -18,7 +18,7 @@ class DatabaseNoutes {
         this.db.insert(nouteTemplte);
     }
 
-    getAll () {
+    getAll (): Promise<INoute[]> {
         return new Promise(resolve => {
             this.db.find({}, (_, noutes) => {
                 resolve(noutes);
@@ -26,8 +26,8 @@ class DatabaseNoutes {
         });
     }
     
-    updateById (id: string, { title, description }) {
-        this.db.update({ _id: id }, { $set: { title, description } });
+    updateById (id: string, { title, description, date }) {
+        this.db.update({ _id: id }, { $set: { title, description, date } });
     }
 
     removeById (id: string) {

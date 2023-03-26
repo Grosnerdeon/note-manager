@@ -1,4 +1,5 @@
 import express, { request } from 'express';
+import { INoute } from 'src/interface/noute';
 import databaseNoutes from '../../database/databaseNoutes';
 export const circularJSON = require('circular-json');
 
@@ -26,12 +27,26 @@ class NoutesRouter {
         })
     }
 
+    getNote () {
+        this.router.get('/:id', async (request, response) => {
+            const { id } = request.params;
+
+            const noutes: INoute[] = await databaseNoutes.getAll();
+            const noute = noutes.find((noute: INoute ) => noute._id === id);
+        
+            response.statusCode = 200; 
+            response.send(circularJSON.stringify(noute));
+        });  
+    }
+
     createNoute () {
         this.router.post('', (request, response) => {
             try {
                 const { title, description } = request.body;
+
+                const date = new Date();
         
-                databaseNoutes.insert({ title, description });
+                databaseNoutes.insert({ title, description, date });
                 response.statusCode = 200;
                 response.send();  
             } catch (error) {
@@ -46,8 +61,10 @@ class NoutesRouter {
             try {
                 const { id } = request.params;
                 const { title, description } = request.body;
+
+                const date = new Date();
         
-                databaseNoutes.updateById(id, { title, description });
+                databaseNoutes.updateById(id, { title, description, date });
                 response.statusCode = 200;
                 response.send();  
             } catch (error) {

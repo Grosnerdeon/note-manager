@@ -13,14 +13,15 @@ export class NoutesComponent implements OnInit, OnDestroy {
   noute: INoute = {
     _id: '',
     title: '',
-    description: ''
+    description: '',
+    date: ''
   }
   subscribtions: any[] = [];
 
   noutes: INoute[] = [];
 
   constructor(
-    public noutesService: NoutesService,
+    private noutesService: NoutesService,
     private applicationService: ApplicationService) { 
   }
 

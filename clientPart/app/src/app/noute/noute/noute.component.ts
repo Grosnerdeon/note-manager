@@ -13,13 +13,13 @@ export class NouteComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    public noutesService: NoutesService,
+    private noutesService: NoutesService,
   ) { 
   }
 
   ngOnInit(): void {
-    const routerParams = this.route.snapshot.paramMap;
-    const producIdFromRoute = routerParams.get('nouteId');
+    const routerParams = this.route?.snapshot?.paramMap;
+    const producIdFromRoute = routerParams?.get('nouteId');
 
     this.noutesService.getNoutes()
       .subscribe(noutes => {

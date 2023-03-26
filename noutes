@@ -1,4 +1,6 @@
-{"title":"45","description":"3244334434dfd 344rgfdgfgfgg 4545rgfgfgfg rtrtertertrt5656 trtrtrtrtegfdgfgdfgg rtretrtert5556565 drgtdrtrtert67 terterttuyu 56563244334434dfd 344rgfdgfgfgg 4545rgfgfgfg rtrtertertrt5656 trtrtrtrtegfdgfgdfgg rtretrtert5556565 drgtdrtrtert67 terterttuyu 56563244334434dfd 344rgfdgfgfgg 4545rgfgfgfg rtrtertertrt5656 trtrtrtrtegfdgfgdfgg rtretrtert5556565 drgtdrtrtert67 terterttuyu 5656","_id":"vCXrEuZlFRMt4KlY"}
-{"title":"Test 1","description":"Description Test 1","_id":"yDWp7U6ksxZZzmFY"}
 {"title":"Главная Задача","description":"*Сделать то\n*Сделать это\n*Сделать се","_id":"YdnCEN2YY485g6H8"}
-{"$$deleted":true,"_id":"vCXrEuZlFRMt4KlY"}
+{"title":"Test 1","description":"Description Test 1","_id":"yDWp7U6ksxZZzmFY"}
+{"$$deleted":true,"_id":"YdnCEN2YY485g6H8"}
+{"$$deleted":true,"_id":"yDWp7U6ksxZZzmFY"}
+{"title":"Fisrt Task","description":"* Go to main\n* Go to parent ","date":{"$$date":1679836727709},"_id":"WP5krdUXAzaGQS3d"}
+{"title":"Second Task","description":"- Kiss my wife","date":{"$$date":1679837451692},"_id":"0slvG8MfeuvqqgNI"}

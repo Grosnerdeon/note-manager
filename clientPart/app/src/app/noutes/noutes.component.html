@@ -7,6 +7,7 @@
                     <a class="title-noute" [routerLink]="['/', noute._id]">
                         {{noute.title}}
                     </a>
+                    <span>({{noute.date | date:'short'}})</span>
                 </mat-card-title>
                 <mat-card-subtitle class="description-noute">{{noute.description}}</mat-card-subtitle>
                 <mat-card-actions>

@@ -1,5 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { INouteDialogData, INouteTemplate } from 'src/app/interfaces/noute/noute';
 import { NoutesService } from 'src/app/noutes.service';
 
 @Component({
@@ -9,9 +10,17 @@ import { NoutesService } from 'src/app/noutes.service';
 })
 export class CreateEditNouteComponent  {
   constructor(
-    public dialogRef: MatDialogRef<CreateEditNouteComponent>,
-    public noutesService: NoutesService,
-    @Inject(MAT_DIALOG_DATA) public data: any,
+    private dialogRef: MatDialogRef<CreateEditNouteComponent>,
+    private noutesService: NoutesService,
+    @Inject(MAT_DIALOG_DATA) public data: INouteDialogData = {
+      noute: {
+        id: '',
+        title: '',
+        description: '',
+        date: ''
+      },
+      titleDialog: ''
+    },
   ) {}
 
   onCancelClick(): void {

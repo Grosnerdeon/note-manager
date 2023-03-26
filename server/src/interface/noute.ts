@@ -1,10 +1,12 @@
 export interface INouteTemplate {
-    title: string;
-    description: string;
+    title: string
+    description: string
+    date: Date
 }
 
 export interface INoute {
-    title: string;
-    description: string;
-    _id: string;
+    title: string
+    description: string
+    date: Date
+    _id: string
 }

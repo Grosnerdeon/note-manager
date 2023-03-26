@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 
 import { BarComponent } from './bar.component';
 
@@ -8,7 +10,18 @@ describe('BarComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BarComponent ]
+      declarations: [ BarComponent ],
+      providers: [{
+        provide: MatDialogRef,
+        useValue: {}
+      }, {
+        provide: HttpClient,
+        useValue: {}
+      },
+      {
+        provide: MatDialog,
+        useValue: {}
+      }]
     })
     .compileComponents();
 
